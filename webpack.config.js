@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: './main.js',
-  output: { path: __dirname, filename: 'bundle.js' },
+  output: { path: __dirname + '/bundled', filename: 'bundle.js' },
   module: {
     loaders: [
       {
@@ -13,6 +13,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /.css$/,
+        loader: 'style!css'
       }
     ]
   },
