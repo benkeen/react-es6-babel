@@ -35,7 +35,7 @@ http://webpack.github.io/docs/stylesheets.html#separate-css-bundle
 
 ### Code Splitting, Multiple Entry Points
 
-This is excellent. This allows bundles created for runtime loading, like I hacked together with Grunt at CBC. 
+This is excellent. This allows bundles created for runtime loading, like what I hacked together with Grunt at CBC. 
 
 Multiple Entry points are different: https://webpack.github.io/docs/multiple-entry-points.html - they're for generating 
 multiple bundles loaded by the page (or wherever), e.g. a "libs.js" that loads all libraries, and an "app.js" for 
@@ -44,16 +44,11 @@ loading your app code.
 
 ### Cache invalidation for bundled files
 
-Very nice. Just include a [hash] in the generated file.
+Just include a [hash] in the generated file.
 https://webpack.github.io/docs/long-term-caching.html
 
-Need to use an additional plugin to access the unique asset filename that was created:
-https://github.com/sporto/assets-webpack-plugin
-
-Bah! Still seems like in Nov 2015 this is still incompletely thought through. Getting the generated asset names is 
-straightforward, but actually updating the index.html is still a separate step that needs to be figured out. See:
-https://github.com/webpack/webpack/issues/86
-
+But we need to use an additional plugin to access the unique asset filename that was created:
+https://github.com/ampedandwired/html-webpack-plugin
 
 ###  Redux
 
