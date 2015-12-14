@@ -129,3 +129,31 @@ const todoApp = combineReducers(reducers)
 
 
 
+## es6 notes
+
+Syntax for import/export. (From: https://github.com/ModuleLoader/es6-module-loader/wiki/Brief-Overview-of-ES6-Module-syntax)
+
+```javascript
+import 'jquery';                        // import a module without any import bindings
+import $ from 'jquery';                 // import the default export of a module
+import { $ } from 'jquery';             // import a named export of a module
+import { $ as jQuery } from 'jquery';   // import a named export to a different name
+
+export var x = 42;                      // export a named variable
+export function foo() {};               // export a named function
+
+export default 42;                      // export the default export
+export default function foo() {};       // export the default export as a function
+
+export { encrypt };                     // export an existing variable
+export { decrypt as dec };              // export a variable as a new name
+export { encrypt as en } from 'crypto'; // export an export from another module
+export * from 'crypto';                 // export all exports from another module
+
+import * as crypto from 'crypto';    // import an entire module instance object
+```
+
+
+### Links
+
+- http://www.sitepoint.com/setting-up-es6-project-using-babel-browserify/
